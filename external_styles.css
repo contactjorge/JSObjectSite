@@ -1,0 +1,57 @@
+/* Semantic layout for desktop */
+body {
+	font-family: sans-serif;
+	line-height: 1.7rem;
+}
+
+/* Header and top navigation bar */
+#top-navi{
+	background: cornflowerblue;
+}
+.navi_links{
+	text-decoration: none;
+	background: cornflowerblue;
+	color: snow;
+	display: inline-flex;
+	padding: 0.25rem 1rem;
+}
+.navi_links:hover{
+	background: snow;
+	color: cornflowerblue;
+}
+
+/* Footer and bottom navigation bar */
+footer{
+	background: lightgray;
+	color: snow;
+}
+#bottom-navi{
+	background: lightgray;
+	text-align: right;
+	left: 0;
+	right: 0;
+}
+#bottom-navi a {
+	color: darkslategray;
+	display: inline-flex;
+	padding: 0.25rem 1rem;
+}
+.footer-links {
+	text-decoration: none;
+}
+#bottom-navi a:hover {
+	background: darkslategrey;
+	color: lightgray;
+}
+
+/* Change layout for smaller screens. Tried to use handheld but did not work */
+@media screen and (min-width: 16rem) and (max-width: 32rem) {
+	.navi_links {
+		text-align: center;
+		display: block;
+	}
+	#bottom-navi a {
+		text-align: center;
+		display: block;
+	}
+}
