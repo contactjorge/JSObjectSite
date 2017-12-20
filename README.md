@@ -6,7 +6,7 @@ http://thejorgelopez.com
 Jorge Lopez
 
 
-Lynda.com Resources: 
+Lynda.com Resources/References: 
 
 Programming Foundations: Fundamentals
 released: 09/2011 | 4h 47m Simon Allardice
@@ -26,5 +26,5 @@ released: 03/2017 | 5h 15m Morten Rand-Hendriksen
 HTML Essential Training
 released: 09/2014 | 5h 54m James Williamson
 
-jQuery Data with AJAX
-released: 11/2013 | 28m 37s Ray Villalobos
+JavaScript and JSON: Integration Techniques
+released: 11/2013 | 1h 12m Ray Villalobos
