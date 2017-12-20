@@ -14,7 +14,7 @@ Web Development Foundations: Full-Stack vs Front-End, released: 06/2016 | 40m 1s
 
 CSS Essential Training 1, released: 03/2017 | 2h 36m Christina Truong
 
-CSS Essential Training 2, released: 03/2017 | 2h 36m Christina Truong
+CSS Essential Training 2, released: 03/2017 | 2h 21m Christina Truong
 
 JavaScript Essential Training, released: 03/2017 | 5h 15m Morten Rand-Hendriksen
 
