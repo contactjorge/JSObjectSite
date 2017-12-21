@@ -16,7 +16,7 @@ let siteData = {
 			"image03": "image04.png",
 			"image04": "image05.png"
 		}// Dummy NavBar Images
-	}],
+	}],//End Header Section Data
 	"Main" : [{ //Notice this is an array with 1 item that has items in it. This is intentional to represent "dirty data feeds"
 		"Sections": [
 			{"Section0": ""},
@@ -32,7 +32,8 @@ let siteData = {
 			{"Article2": ""},
 			{"Article3": ""}//Challenge: Check for null article content
 		],
-		"People": {  //People data is a standard object with key : field pairs. Why would the above examples have [ ] around them? (part of the challenge)
+		"People": [
+			{  //People data is a standard object with key : field pairs. Why would the above examples have [ ] around them? (part of the challenge)
 				"fName": "Jorge",
 				"lName": "Lopez",
 				"Movies": [
@@ -51,13 +52,12 @@ let siteData = {
 					{
 						"Title": "E.T.",
 						"Year": "1982"
-					}
-				]
-		},//End Person card 1. Challenge: Sort movies by year
-		{
-			"fName": "John",
-			"lName": "Smith",
-			"Movies": [
+					}]
+			},//End Person card 1. Challenge: Sort movies by year{
+			{
+				"fName": "John",
+				"lName": "Smith",
+				"Movies": [
 				{
 					"Title": "It's a Wonderful Life",
 					"Year": "1946"
@@ -74,29 +74,29 @@ let siteData = {
 					"Title": "Grease",
 					"Year": "1978"
 				}]
-		},//End Person card 2. Challenge: Sort movies by year
-		{
-			"fName": "Sarah-Jane",
-			"lName": "Smith",
-			"Movies": [
-				{
+			},//End Person card 2. Challenge: Sort movies by year
+			{
+				"fName": "Sarah-Jane",
+				"lName": "Smith",
+				"Movies": [
+					{
 					"Title": "Batman",
 					"Year": "1980"
-				},
-				{
+					},
+					{
 					"Title": "Star Wars: Force Awakens",
 					"Year": "2015"
-				},
-				{
+					},
+					{
 					"Title": "Star Trek",
 					"Year": "1979"
-				},
-				{
+					},
+					{
 					"Title": "Gone With the Wind",
 					"Year": "1939"
 				}]
 		},//End Person card 3. Challenge: Sort movies by year
-		{
+			{
 			"fName": "Neil DeGrasse",
 			"lName": "Tyson",
 			"Movies": [
@@ -115,28 +115,27 @@ let siteData = {
 				{
 					"Title": "Young Frankenstein",
 					"Year": "1974"
-				}
-			]
-		}//End Person card 4. Challenge: Sort movies by year
-	],//End Person Content Challenge: Sort by Last Name
-	"Footer" : { //build the footer social media nav element with links
+				}]//End Person card 4. Challenge: Sort movies by year
+			}]//End Person Content Challenge: Sort by Last Name
+	}],//End Main Section Data
+	"Footer": {
 		"socialMedia" : {
 			"blog"     : "http://sithguidetogalaxy.com",
 			"facebook" : "https://www.facebook.com/DePaulUniversity/",
 			 "youtube"  : "https://www.youtube.com/user/BinauralBrainwave",
 			 "instagram"  : "https://www.instagram.com/downtownevanston/",
 			 "twitter"  : "https://twitter.com/repkellycassidy"
-		}//Social Media Links
-	}
+		}//End Social Media Links for navigation
+	}//build the Footer Section Data
 };//End Site Data Object
 
-function getSiteData() {
+function setSiteData() {
 	let footerData = siteData.Footer;
-	let headerData = siteData.Header
-}//end getSiteData Data for site builder
+	let headerData = siteData.Header;
+}//end setSiteData Data for site builder
 
 
-function setSiteContent() {
+function getSiteContent() {
 	getNavi(); //returns the top navigation bar.
 	getMainContent(); //returns the top navigation bar.
 	getFooter(); //returns the top navigation bar.
@@ -145,29 +144,29 @@ function setSiteContent() {
 function getNavi() {
 	let updateNavBar = document.getElementById('top-navi');
 	let linkSite = '';
-	for (let i = 0; i <= siteData.navLinks.length; i++){
-		for (key in siteData.navLinks[i]){
-			if (siteData.navLinks[i].hasOwnProperty(key)){
-				linkSite += '<a id="nav_link' + i + '" href="' + siteData.navLinks[i][key] + '" class="navi_links">' + key + '</a>' +'\n';
-			}
+	//for (let a = 0; a <= siteData.Header[0].NavBar.length; a++){
+	for (key in siteData.Header[0].NavBar) {
+		if (siteData.Header[0].NavBar.hasOwnProperty(key)) {
+			linkSite += '<a id="nav_link' + key + '" href="' + siteData.Header[0].NavBar[key] + '" class="navi_links">' + key + '</a>' + '\n';
 		}
+		//	}
 	}
 	return updateNavBar.innerHTML = linkSite;
 }//end getNavi() navbar builder
 
-function getSections() {
+function setSections() {
 	let updateSections = document.getElementById('main-semantic');
 	let sectionContent = '';
 }//end getSections Data and section builder
 
 
-function getArticles() {
+function setArticles() {
 	let updateArticles = document.getElementById('main-semantic');
 	let articleContent = '';
 
 }//end getArticles Data and article builder
 
-function getPeopleCards() {
+function setPeopleCards() {
 
 }//end getPeopleCards Data and People card builder
 
@@ -180,10 +179,10 @@ function getFooter() {
 			}//append the strings to a single output the <a> links
 		}
 	return updateFooter.innerHTML = socialMediaLinks;
-}//end geFooteri() navbar builder
+}//end getFooteri() navbar builder
 
 function getMainContent() {
-	getArticles();
-	getSections();
-	getPeopleCards();
-}
+	setArticles();
+	setSections();
+	setPeopleCards();
+} //end getMainContent
