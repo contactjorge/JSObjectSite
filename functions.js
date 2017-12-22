@@ -1,6 +1,6 @@
 /**
  * Jorge L Lopez
- * December 15th, 2017
+ * December 19th, 2017
  * Do not add this script to the project. It's just a scratch file.
  *
  * Function Stubs. Not for external use.
@@ -8,9 +8,6 @@
  * They are practice functions before implementation.
  *
  */
-
-
-
 
 function getMainContent() {
 	setArticles();

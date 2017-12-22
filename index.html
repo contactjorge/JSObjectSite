@@ -23,12 +23,11 @@
 	</footer> <!-- End Footer Semantic -->
  
 	<script>
-		let theSite = function siteBuilder() {
-			return this.siteData;
-		};
-		let theTitle = theSite.getSiteTitle();
+		site = siteData;
+		theTitle = getSiteTitle();
+		setSiteTitle(theTitle); //set the site title
+
 		//siteBuilder(theSite).setSiteTitle();
-		document.title = get; //set the site title
 		getSiteContent(); //build the site from one function
 	</script> <!-- End Footer Semantic. Could not defer. Looking into -->
 </body>

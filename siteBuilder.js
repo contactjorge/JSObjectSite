@@ -1,6 +1,6 @@
 /**
  * Jorge L Lopez
- * December 15th, 2017
+ * December 21st, 2017
  * Main functions called SiteBuilder, May become a class in future iterations
  *
  * This SiteBuilder exersize builds a site from a single local JavaScript Object
@@ -11,10 +11,8 @@
  */
 
 
-
-
 function getSiteTitle(){
-	siteTitle = this.siteData.Title;
+	siteTitle = this.site.Title;
 	return siteTitle;
 }
 
