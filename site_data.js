@@ -1,3 +1,10 @@
+/**
+ * Jorge L Lopez
+ * December 15th, 2017
+ * Site Data Object for the site builder.
+ *
+ */
+
 let siteData = {
 	"Title": "Internet Video Database", //used to change the site name
 	"Owner" : "Walt Disney Studios", //used to change the ?
@@ -129,60 +136,3 @@ let siteData = {
 	}//build the Footer Section Data
 };//End Site Data Object
 
-function setSiteData() {
-	let footerData = siteData.Footer;
-	let headerData = siteData.Header;
-}//end setSiteData Data for site builder
-
-
-function getSiteContent() {
-	getNavi(); //returns the top navigation bar.
-	getMainContent(); //returns the top navigation bar.
-	getFooter(); //returns the top navigation bar.
-}//end getSiteContent
-
-function getNavi() {
-	let updateNavBar = document.getElementById('top-navi');
-	let linkSite = '';
-	//for (let a = 0; a <= siteData.Header[0].NavBar.length; a++){
-	for (key in siteData.Header[0].NavBar) {
-		if (siteData.Header[0].NavBar.hasOwnProperty(key)) {
-			linkSite += '<a id="nav_link' + key + '" href="' + siteData.Header[0].NavBar[key] + '" class="navi_links">' + key + '</a>' + '\n';
-		}
-		//	}
-	}
-	return updateNavBar.innerHTML = linkSite;
-}//end getNavi() navbar builder
-
-function setSections() {
-	let updateSections = document.getElementById('main-semantic');
-	let sectionContent = '';
-}//end getSections Data and section builder
-
-
-function setArticles() {
-	let updateArticles = document.getElementById('main-semantic');
-	let articleContent = '';
-
-}//end getArticles Data and article builder
-
-function setPeopleCards() {
-
-}//end getPeopleCards Data and People card builder
-
-function getFooter() {
-	let updateFooter = document.getElementById('bottom-navi'); //Get element ID that will hold the new nav elements
-	let socialMediaLinks = ''; //empty string for link builder
-		for (fKey in siteData.Footer.socialMedia) { //loop through the object socialMedia
-			if (siteData.Footer.socialMedia.hasOwnProperty(fKey)){ //Check whether the object has specified property as own and not inherited
-				socialMediaLinks += '<a id="footer-link-' + fKey + '" href="' + siteData.Footer.socialMedia[fKey] + '" class="footer-links">' + fKey + '</a>' +'\n';
-			}//append the strings to a single output the <a> links
-		}
-	return updateFooter.innerHTML = socialMediaLinks;
-}//end getFooteri() navbar builder
-
-function getMainContent() {
-	setArticles();
-	setSections();
-	setPeopleCards();
-} //end getMainContent

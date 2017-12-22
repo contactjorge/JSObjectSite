@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive Layout -->
 	<title></title> <!-- Empty title which will be populated later -->
 	<link rel="stylesheet" href="external_styles.css"> <!-- Using an external stylesheet. -->
-	<script type="text/javascript" src="site_data.js"></script> <!-- Main JSON/JavaScript Object to build Site content-->
-	
-	<!-- <script type="text/javascript" src="functions.js"></script> -->
+	<script type="text/javascript" src="siteBuilder.js"></script>
 	<!-- Wanted to separate this but functions did not see the object. Is it because I used let? -->
+
+	<script type="text/javascript" src="site_data.js"></script> <!-- Main JSON/JavaScript Object to build Site content-->
 
 </head>
 <body>
@@ -21,9 +21,14 @@
 	<footer id="footer-semantic">
 		<nav id="bottom-navi"></nav> <!-- End Footer navbar element -->
 	</footer> <!-- End Footer Semantic -->
-
+ 
 	<script>
-		document.title = siteData.Site; //set the site title
+		let theSite = function siteBuilder() {
+			return this.siteData;
+		};
+		let theTitle = theSite.getSiteTitle();
+		//siteBuilder(theSite).setSiteTitle();
+		document.title = get; //set the site title
 		getSiteContent(); //build the site from one function
 	</script> <!-- End Footer Semantic. Could not defer. Looking into -->
 </body>
