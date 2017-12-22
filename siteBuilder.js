@@ -16,7 +16,7 @@ function getSiteTitle(){
 	return siteTitle;
 }
 
-function setSiteTitle(siteTitle){
+function setSiteTitle(){
 	document.title = getSiteTitle();
 }
 
