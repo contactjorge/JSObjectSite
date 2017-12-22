@@ -10,31 +10,62 @@
  * ECMAScript 2017 and 2018 won't be used in this exercise.
  */
 
+function getSiteOwner(){
+	return this.site.Owner;
+}
 
 function getSiteTitle(){
-	siteTitle = this.site.Title;
-	return siteTitle;
+	return this.site.Title;
+}
+
+function getSiteHeader() {
+	return this.site.Header;
+}
+
+function getSiteMain() {
+	return this.site.Main;
+}
+
+function getSiteFooter() {
+	return this.site.Footer;
+}
+
+function getSiteNav() {
+	theNavi = '';
+	
+	for (let a = 0; a < this.siteHeader.length; a++){
+		for (key in this.siteHeader[a]) {
+			if (this.siteHeader[a].hasOwnProperty(key)) {
+				if (key === 'NavBar'){
+					theNavi = this.siteHeader[a][key];
+				}
+			}
+		}
+	}
+	return (theNavi);
+	
 }
 
 function setSiteTitle(){
 	document.title = getSiteTitle();
 }
 
+function setSiteOwner(){
+	return document.getElementById('header-semantic').nextElementSibling.innerHTML = '<h1 id="site-owner">' + this.siteOwner + '</h1>';
+}
 
-function getNavi() {
+function setSiteNav() {
 	let updateNavBar = document.getElementById('top-navi');
 	let linkSite = '';
-	//for (let a = 0; a <= siteData.Header[0].NavBar.length; a++){
-	for (key in siteData.Header[0].NavBar) {
-		if (siteData.Header[0].NavBar.hasOwnProperty(key)) {
-			linkSite += '<a id="nav_link' + key + '" href="' + siteData.Header[0].NavBar[key] + '" class="navi_links">' + key + '</a>' + '\n';
+	for (key in this.siteNav) {
+		if (this.siteNav.hasOwnProperty(key)) {
+			linkSite += '<a id="nav_link' + key + '" href="' + this.siteNav[key] + '" class="navi_links">' + key + '</a>' + '\n';
 		}
-		//	}
 	}
 	return updateNavBar.innerHTML = linkSite;
 }//end getNavi() navbar builder
 
-function getFooter() {
+function setSiteFooter() {
 	let updateFooter = document.getElementById('bottom-navi'); //Get element ID that will hold the new nav elements
 	let socialMediaLinks = ''; //empty string for link builder
 	for (fKey in siteData.Footer.socialMedia) { //loop through the object socialMedia
@@ -45,14 +76,23 @@ function getFooter() {
 	return updateFooter.innerHTML = socialMediaLinks;
 }//end getFooteri() navbar builder
 
-function getSiteContent() {
-	getNavi(); //returns the top navigation bar.
-	//getMainContent(); //returns the top navigation bar.
-	getFooter(); //returns the top navigation bar.
-	/*
-	let footerData = siteData.Footer;
-	let headerData = siteData.Header;
-	let mainData = siteData.Main;
-	let sectionData = setSections(mainData);
-	*/
-}//end getSiteContent
+
+function siteBuilder(theSiteData) {
+	//this.siteOwner = getSiteOwner();
+	site = theSiteData;
+	siteOwner = getSiteOwner();
+	siteTitle = getSiteTitle();
+	siteHeader = getSiteHeader();
+	siteMain = getSiteMain(site);
+	siteFooter = getSiteFooter(site);
+	siteNav = getSiteNav(siteHeader);
+	
+	setSiteTitle();
+	
+	setSiteOwner();
+	
+	setSiteNav();
+	
+	setSiteFooter();
+	
+}
