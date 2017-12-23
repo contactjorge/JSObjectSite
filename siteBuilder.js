@@ -7,7 +7,9 @@
  * There are no frameworks or libraries used in this exercise. This is taking "it"
  * back to the basics with some addition of newer ECMAScript 2015, 2016 concepts.
  *
- * ECMAScript 2017 and 2018 won't be used in this exercise.
+ * If the data is truly an object then do I need getters and setters? Which ones are necessary
+ * and which ones are not? Are the mutators methods already implied in the object itself?
+ * (Edited December 23, 2017
  */
 
 function getSiteOwner(){

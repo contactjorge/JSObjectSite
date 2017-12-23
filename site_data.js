@@ -3,28 +3,37 @@
  * December 15th, 2017
  * Site Data Object for the site builder.
  *
+ * Is this truly an object? Where do the methods begin
+ * and which data points represent properties and constructors?
+ * The goal of this learning example is to identify the questions and answers.
+ *
+ * This will be achieved through an analysis of the Object Oriented design features of JavaScript
+ * such as object prototypes, classes, and inheritance.
+ *
+ * A goal for me personally is to explore the singleton deign pattern. Anyone care to explain it?
+ * (edited December 23, 2017)
  */
 
 let siteData = {
-	"Title": "Internet Video Database", //used to change the site name
-	"Owner" : "Walt Disney Studios", //used to change the ?
-	"Header": [{
-		"Logo": "logo.png", //Logo for the NavBar
-		"NavBar": {
+	"Title": "Internet Video Database", //Method to change the site name
+	"Site_Images": {// Site Image properties for image elements.
+		"image00": "image01.png",
+		"image01": "image02.png",
+		"image02": "image03.png",
+		"image03": "image04.png",
+		"image04": "image05.png"
+	},//End Images Data
+	"Header": [{ //Method for all header properties
+		"Owner" : "Walt Disney Studios", //Header property for the header title
+		"Logo": "logo.png", //Logo property for the Header or NavBar
+		"NavBar": { //NavBar property for the header.
 			"About": "http://thejorgelopez.com",
 			"Portfolio": "http://thejorgelopez.com",
 			"Blog": "http://thejorgelopez.com",
 			"Resume": "http://thejorgelopez.com"
-		},// NavBar Elements with URL
-		"Header_Images": {
-			"image00": "image01.png",
-			"image01": "image02.png",
-			"image02": "image03.png",
-			"image03": "image04.png",
-			"image04": "image05.png"
-		}// Dummy NavBar Images
-	}],//End Header Section Data
-	"Main" : [{ //Notice this is an array with 1 item that has items in it. This is intentional to represent "dirty data feeds"
+		}
+	}],//End Header Section
+	"Main" : [{ //Notice this is an array with 1 item that has items in it. This is intentional to represent "dirty data feeds" or Object methods and properties.
 		"Sections": [
 			{"Section0": ""},
 			{"Section1": ""},
@@ -40,7 +49,7 @@ let siteData = {
 			{"Article3": ""}//Challenge: Check for null article content
 		],
 		"People": [
-			{  //People data is a standard object with key : field pairs. Why would the above examples have [ ] around them? (part of the challenge)
+			{  //People card Method. Has Object with key : field pairs. Why would this method have [] around them? (part of the challenge)
 				"fName": "Jorge",
 				"lName": "Lopez",
 				"Movies": [
@@ -125,8 +134,8 @@ let siteData = {
 				}]//End Person card 4. Challenge: Sort movies by year
 			}]//End Person Content Challenge: Sort by Last Name
 	}],//End Main Section Data
-	"Footer": {
-		"socialMedia" : {
+	"Footer": {//Footer method for the header.
+		"socialMedia" : {//Social Media property for the footer? Can you think of another use?
 			"blog"     : "http://sithguidetogalaxy.com",
 			"facebook" : "https://www.facebook.com/DePaulUniversity/",
 			 "youtube"  : "https://www.youtube.com/user/BinauralBrainwave",
@@ -135,4 +144,3 @@ let siteData = {
 		}//End Social Media Links for navigation
 	}//build the Footer Section Data
 };//End Site Data Object
-
