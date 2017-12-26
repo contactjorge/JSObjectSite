@@ -45,7 +45,10 @@ var siteData = {
 			{"Article0": ""},
 			{"Article1": ""},
 			{"Article2": ""},
-			{"Article3": ""}//Challenge: Check for null article content
+			{"Article3": ""},
+			{"Article4": ""},
+			{"Article5": ""},
+			{"Article6": ""}//Challenge: Check for null article content
 		],
 		"People": [
 			{  //People card Method. Has Object with key : field pairs. Why would this method have [] around them? (part of the challenge)

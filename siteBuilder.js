@@ -73,6 +73,21 @@ function setSiteFooter() {
 	return updateFooter.innerHTML = socialMediaLinks;
 }//end getFooter() navbar builder
 
+function findAllArrays(theObject) {
+	if (Array.isArray(theObject)) {
+		console.log('Is Array: ' + theObject + '\n');
+		for (let i = 0; i < theObject.length; i++)
+		{
+			console.log(theObject[i]);
+		}
+	} else {
+		for (objKey in theObject) {
+			if (theObject.hasOwnProperty(objKey)){
+				console.log('Not Array: ' + objKey + ' ' + theObject[objKey]);
+			}
+		}
+	}
+}
 
 function SiteBuilder(site) {
 	this.site = site;
@@ -87,27 +102,10 @@ function SiteBuilder(site) {
 	setSiteOwner();
 	setSiteNav();
 	setSiteFooter();
-	
-	
-	let isSiteMainArray = (siteMain) => {
-		return (Object.prototype.toString.call(siteMain) === '[object Array]');
-	};
-	
-	console.log(isSiteMainArray);
-	
-	if (siteMain.isArray) {
-		console.log('Is Array: ' + siteMain + '\n');
-		for (let i = 0; i < siteMain.length; i++)
-		{
-			console.log(siteMain[i]);
-		}
-	} else {
-		for (mainKey in siteMain) {
-			if (siteMain.hasOwnProperty(mainKey)){
-				console.log('Not Array: ' + mainKey + ' ' + siteMain[mainKey]);
-			}
-		}
-	}
+	findAllArrays(siteHeader);
+	findAllArrays(siteMain);
+	findAllArrays(site);
+
 	/*
 	function MainSection (siteMain){
 		this.siteMain = siteMain;
