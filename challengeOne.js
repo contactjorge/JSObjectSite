@@ -1,3 +1,12 @@
+/*
+ * Use something to loop through the array, using the toDataURL method to convert the urls to data uris.
+ * 
+ * After the iteration is done, log all seven data uris. This will require to wait for toDataURL to finish during each iteration.
+ * 
+ */
+
+
+
 // to data uri
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs
 
@@ -11,8 +20,6 @@ const toDataURL = url => fetch(url)
   }))
 
 
-
-
 // urls
 const urls = [
     'https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/220px-Twitter_bird_logo_2012.svg.png',
@@ -24,7 +31,7 @@ const urls = [
     'https://media.wired.com/photos/592670dfcfe0d93c47430371/master/w_2400,c_limit/YouTube-social-icon2.jpg',
 ]
 
-/**
+/*
  * Todo   
  */ 
 
