@@ -23,11 +23,11 @@
 	</footer> <!-- End Footer Semantic -->
  
 	<script>
-		site = siteData;
+		var site = siteData;
 		//theTitle = getSiteTitle();
 		
 		//siteBuilder(theSite).setSiteTitle();
-		siteBuilder(site); //build the site from one function
+		var buildSite = new SiteBuilder(site);
 	</script> <!-- End Footer Semantic. Could not defer. Looking into -->
 </body>
 </html> <!-- End Page. Very simple. Content is added dynamically -->

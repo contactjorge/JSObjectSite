@@ -13,8 +13,7 @@
  * A goal for me personally is to explore the singleton deign pattern. Anyone care to explain it?
  * (edited December 23, 2017)
  */
-
-let siteData = {
+var siteData = {
 	"Title": "Internet Video Database", //Method to change the site name
 	"Site_Images": {// Site Image properties for image elements.
 		"image00": "image01.png",
@@ -23,7 +22,7 @@ let siteData = {
 		"image03": "image04.png",
 		"image04": "image05.png"
 	},//End Images Data
-	"Header": [{ //Method for all header properties
+	"Header": { //Method for all header properties
 		"Owner" : "Walt Disney Studios", //Header property for the header title
 		"Logo": "logo.png", //Logo property for the Header or NavBar
 		"NavBar": { //NavBar property for the header.
@@ -32,7 +31,7 @@ let siteData = {
 			"Blog": "http://thejorgelopez.com",
 			"Resume": "http://thejorgelopez.com"
 		}
-	}],//End Header Section
+	},//End Header Section
 	"Main" : [{ //Notice this is an array with 1 item that has items in it. This is intentional to represent "dirty data feeds" or Object methods and properties.
 		"Sections": [
 			{"Section0": ""},

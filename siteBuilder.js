@@ -11,9 +11,8 @@
  * and which ones are not? Are the mutators methods already implied in the object itself?
  * (Edited December 23, 2017
  */
-
 function getSiteOwner(){
-	return this.site.Owner;
+	return this.siteHeader.Owner;
 }
 
 function getSiteTitle(){
@@ -35,13 +34,9 @@ function getSiteFooter() {
 function getSiteNav() {
 	theNavi = '';
 	
-	for (let a = 0; a < this.siteHeader.length; a++){
-		for (key in this.siteHeader[a]) {
-			if (this.siteHeader[a].hasOwnProperty(key)) {
-				if (key === 'NavBar'){
-					theNavi = this.siteHeader[a][key];
-				}
-			}
+	for (key in this.siteHeader) {
+		if (this.siteHeader.hasOwnProperty(key)) {
+				theNavi = this.siteHeader[key];
 		}
 	}
 	return (theNavi);
@@ -49,7 +44,7 @@ function getSiteNav() {
 }
 
 function setSiteTitle(){
-	document.title = getSiteTitle();
+	return document.title = getSiteTitle();
 }
 
 function setSiteOwner(){
@@ -76,25 +71,62 @@ function setSiteFooter() {
 		}//append the strings to a single output the <a> links
 	}
 	return updateFooter.innerHTML = socialMediaLinks;
-}//end getFooteri() navbar builder
+}//end getFooter() navbar builder
 
 
-function siteBuilder(theSiteData) {
-	//this.siteOwner = getSiteOwner();
-	site = theSiteData;
-	siteOwner = getSiteOwner();
-	siteTitle = getSiteTitle();
+function SiteBuilder(site) {
+	this.site = site;
 	siteHeader = getSiteHeader();
+	siteTitle = getSiteTitle();
 	siteMain = getSiteMain(site);
 	siteFooter = getSiteFooter(site);
+	siteOwner = getSiteOwner();
 	siteNav = getSiteNav(siteHeader);
 	
 	setSiteTitle();
-	
 	setSiteOwner();
-	
 	setSiteNav();
-	
 	setSiteFooter();
 	
+	
+	let isSiteMainArray = (siteMain) => {
+		return (Object.prototype.toString.call(siteMain) === '[object Array]');
+	};
+	
+	console.log(isSiteMainArray);
+	
+	if (siteMain.isArray) {
+		console.log('Is Array: ' + siteMain + '\n');
+		for (let i = 0; i < siteMain.length; i++)
+		{
+			console.log(siteMain[i]);
+		}
+	} else {
+		for (mainKey in siteMain) {
+			if (siteMain.hasOwnProperty(mainKey)){
+				console.log('Not Array: ' + mainKey + ' ' + siteMain[mainKey]);
+			}
+		}
+	}
+	/*
+	function MainSection (siteMain){
+		this.siteMain = siteMain;
+		
+		
+		
+		let siteArticles = this.siteMain.Articles;
+		let sitePeople = this.siteMain.People;
+
+		siteArticles.map((siteArticles) => {
+			return siteArticles.length;
+		});
+
+		sitePeople.map((sitePeople) => {
+			return sitePeople.length;
+		)};
+		
+		function getSiteSections(){}
+		function getSitePeople(){}
+	}
+	*/
 }
