@@ -16,7 +16,39 @@ function getMainContent() {
 } //end getMainContent
 
 
+function getSiteNav() {
+	theNavi = '';
 
+	for (key in this.siteHeader) {
+		if (this.siteHeader.hasOwnProperty(key)) {
+				theNavi = this.siteHeader[key];
+		}
+	}
+	return (theNavi);
+}
+
+function findAllArrays(theObject) {
+	if (Array.isArray(theObject)) {
+
+	} else {
+
+	}
+}
+
+function findArray(thisObject) {
+	var newObject = '';
+	if (Array.isArray(thisObject)) {
+		if (thisObject.length < 2) {
+			newObject = thisObject[0];
+		}
+	} else {
+		for (let i = 0; i < thisObject.length; i++)
+		{
+			newObject += thisObject[i];
+		}
+	}
+	return newObject;
+}
 
 function getSiteOwner(){
 	

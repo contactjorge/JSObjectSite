@@ -11,120 +11,100 @@
  * and which ones are not? Are the mutators methods already implied in the object itself?
  * (Edited December 23, 2017
  */
-function getSiteOwner(){
-	return this.siteHeader.Owner;
+
+function setSiteTitle(siteTitle){
+	this.siteTitle = siteTitle;
+	document.title = this.siteTitle;
 }
 
-function getSiteTitle(){
-	return this.site.Title;
-}
-
-function getSiteHeader() {
-	return this.site.Header;
-}
-
-function getSiteMain() {
-	return this.site.Main;
-}
-
-function getSiteFooter() {
-	return this.site.Footer;
-}
-
-function getSiteNav() {
-	theNavi = '';
+function getSiteOwner(owner){
+	var headerTitle = document.createElement("h1");
+	var titleText = document.createTextNode(owner);
+	headerTitle.appendChild(titleText);
 	
-	for (key in this.siteHeader) {
-		if (this.siteHeader.hasOwnProperty(key)) {
-				theNavi = this.siteHeader[key];
-		}
-	}
-	return (theNavi);
-	
+	var	updateHeader = document.getElementById('header-semantic');
+	updateHeader.appendChild(headerTitle);
+	//	.innerHTML = '<h1 id="header-navi"> </h1>';
+	//updateOwner.write('<h1 id="header-owner">' + owner +'</h1>');
+	return updateHeader;
 }
 
-function setSiteTitle(){
-	return document.title = getSiteTitle();
-}
-
-function setSiteOwner(){
-	return document.getElementById('header-semantic').nextElementSibling.innerHTML = '<h1 id="site-owner">' + this.siteOwner + '</h1>';
-}
-
-function setSiteNav() {
-	let updateNavBar = document.getElementById('top-navi');
-	let linkSite = '';
-	for (key in this.siteNav) {
-		if (this.siteNav.hasOwnProperty(key)) {
-			linkSite += '<a id="nav_link' + key + '" href="' + this.siteNav[key] + '" class="navi_links">' + key + '</a>' + '\n';
+function getSiteNav(topNav) {
+	var updateNavBar = document.getElementById('top-navi');
+	var linkSite = '';
+	for (key in topNav) {
+		if (topNav.hasOwnProperty(key)) {
+			linkSite += '<a id="nav_link' + key + '" href="' + topNav[key] + '" class="navi_links">' + key + '</a>' + '\n';
 		}
 	}
 	return updateNavBar.innerHTML = linkSite;
 }//end getNavi() navbar builder
 
-function setSiteFooter() {
-	let updateFooter = document.getElementById('bottom-navi'); //Get element ID that will hold the new nav elements
-	let socialMediaLinks = ''; //empty string for link builder
-	for (fKey in siteData.Footer.socialMedia) { //loop through the object socialMedia
-		if (siteData.Footer.socialMedia.hasOwnProperty(fKey)){ //Check whether the object has specified property as own and not inherited
-			socialMediaLinks += '<a id="footer-link-' + fKey + '" href="' + siteData.Footer.socialMedia[fKey] + '" class="footer-links">' + fKey + '</a>' +'\n';
+function getSiteFooter(footers) {
+	var updateFooter = document.getElementById('bottom-navi'); //Get element ID that will hold the new nav elements
+	var socialMediaLinks = ''; //empty string for link builder
+	for (fKey in footers.Social_Media) { //loop through the object socialMedia
+		if (footers.Social_Media.hasOwnProperty(fKey)){ //Check whether the object has specified property as own and not inherited
+			socialMediaLinks += '<a id="footer-link-' + fKey + '" href="' + footers.Social_Media[fKey] + '" class="footer-links">' + fKey + '</a>\n';
 		}//append the strings to a single output the <a> links
 	}
 	return updateFooter.innerHTML = socialMediaLinks;
 }//end getFooter() navbar builder
 
-function findAllArrays(theObject) {
-	if (Array.isArray(theObject)) {
-		console.log('Is Array: ' + theObject + '\n');
-		for (let i = 0; i < theObject.length; i++)
-		{
-			console.log(theObject[i]);
-		}
-	} else {
-		for (objKey in theObject) {
-			if (theObject.hasOwnProperty(objKey)){
-				console.log('Not Array: ' + objKey + ' ' + theObject[objKey]);
-			}
-		}
-	}
+
+function getSitePeople(){
+
 }
 
-function SiteBuilder(site) {
-	this.site = site;
-	siteHeader = getSiteHeader();
-	siteTitle = getSiteTitle();
-	siteMain = getSiteMain(site);
-	siteFooter = getSiteFooter(site);
-	siteOwner = getSiteOwner();
-	siteNav = getSiteNav(siteHeader);
+function MainSection (siteSections, siteArticles, siteImages){
+	this.siteSections = siteSections;
+	this.siteArticles = siteArticles;
+	this.siteImages = siteImages;
 	
-	setSiteTitle();
-	setSiteOwner();
-	setSiteNav();
-	setSiteFooter();
-	findAllArrays(siteHeader);
-	findAllArrays(siteMain);
-	findAllArrays(site);
+	function getSiteSections(){
+		
+		var updateMain = document.getElementById('main-semantic');
+		var mainSections = '';
 
-	/*
-	function MainSection (siteMain){
-		this.siteMain = siteMain;
+		for (secKey in siteSections) {
+			if (siteSections.hasOwnProperty(secKey)) {
+				mainSections += '<section id="' + secKey + '" class="styled-sections" >' +
+					'<h2>' + siteSections[secKey] + '</h2>\n' +
+					'</section>\n';
+			}
+		}
 		
-		
-		
-		let siteArticles = this.siteMain.Articles;
-		let sitePeople = this.siteMain.People;
-
-		siteArticles.map((siteArticles) => {
-			return siteArticles.length;
-		});
-
-		sitePeople.map((sitePeople) => {
-			return sitePeople.length;
-		)};
-		
-		function getSiteSections(){}
-		function getSitePeople(){}
+		return updateMain.innerHTML = mainSections;
 	}
-	*/
+	
+	getSiteSections();
+}
+
+
+function SiteBuilder(site, siteTitle, siteImages, siteHeader, siteMain, siteFooter) {
+	this.site = site;
+	this.siteTitle = setSiteTitle(siteTitle);
+	this.siteHeader = siteHeader;
+	this.siteMain = siteMain;
+	this.siteFooter = siteFooter;
+	this.siteImages = siteImages;
+	
+	let siteOwner = this.siteHeader.Owner;
+	let siteNav = this.siteHeader.NavBar;
+	let siteSections = this.siteMain.Sections;
+	let siteArticles = this.siteMain.Sections;
+	//let sitePeople = siteMain.Sections;
+	
+	getSiteOwner(siteOwner);
+	getSiteNav(siteNav);
+	getSiteFooter(this.siteFooter);
+	
+	var mainSection = new MainSection(siteSections, siteArticles, this.siteImages);
+	mainSection;
+	//console.log('Is Array: ' + Array.isArray(siteMain));
+	//findArray(siteHeader);
+	//console.log('Is Array: ' + Array.isArray(siteMain));
+	
+
+	
 }
