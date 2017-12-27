@@ -110,7 +110,7 @@ function MainSection (siteSections, siteArticles, siteImages){
  * This is an Object called SiteBuilder with properties of a web page.
  * This object is meant to be dynamically built and an exercise on creating a site using JavaScript without
  * frameworks. After all of the HTML elements have been created, further challenges will be added.
-  * Challenges will include augmenting a Virtual DOM to change content dynamically.
+ * Challenges will include augmenting a Virtual DOM to change content dynamically.
  */
 function SiteBuilder(site, siteTitle, siteImages, siteHeader, siteMain, siteFooter) { //constructors for the new object
 	this.site = site;
