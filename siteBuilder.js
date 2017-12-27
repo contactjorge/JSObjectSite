@@ -13,30 +13,34 @@
  */
 
 function setSiteTitle(siteTitle){
-	this.siteTitle = siteTitle;
-	document.title = this.siteTitle;
+	//add a site title dynamically.
+	this.siteTitle = siteTitle; //set this functions siteTitle variable to the constructor siteTitle
+	document.title = this.siteTitle; //assign the object property "Title" to document.title
 }
 
 function getSiteOwner(owner){
-	var headerTitle = document.createElement("h1");
-	var titleText = document.createTextNode(owner);
-	headerTitle.appendChild(titleText);
+	//create and place the site's owner as the title for the header semantic.
+	var headerTitle = document.createElement("h1"); //create the h1 element in the header-semantic element
+	var titleText = document.createTextNode(owner); //create the h1 text node in the h1 in the header-semantic element
+	headerTitle.appendChild(titleText); //create an <h1> child element in <header> with owner text
 	
-	var	updateHeader = document.getElementById('header-semantic');
-	updateHeader.appendChild(headerTitle);
-	//	.innerHTML = '<h1 id="header-navi"> </h1>';
-	//updateOwner.write('<h1 id="header-owner">' + owner +'</h1>');
-	return updateHeader;
+	var	updateHeader = document.getElementById('header-semantic'); //seek, locate, and enumerate the header-semantic element.
+	updateHeader.appendChild(headerTitle); //append the new <h1> child element to the header
+	
+	return updateHeader; //does this need to be returned?
 }
 
 function getSiteNav(topNav) {
-	var updateNavBar = document.getElementById('top-navi');
+	//create and place the top navigation bar.
+	var updateNavBar = document.getElementById('top-navi'); //seek, locate, and enumerate the header-semantic element.
 	var linkSite = '';
+	
+	//iterate and append elements to the tap-navi element in the body <header> semantic
 	for (key in topNav) {
 		if (topNav.hasOwnProperty(key)) {
 			linkSite += '<a id="nav_link' + key + '" href="' + topNav[key] + '" class="navi_links">' + key + '</a>' + '\n';
 		}
-	}
+	}//iterate through the NavBar child object.
 	return updateNavBar.innerHTML = linkSite;
 }//end getNavi() navbar builder
 
@@ -53,15 +57,24 @@ function getSiteFooter(footers) {
 
 
 function getSitePeople(){
-
+	//Stub for creating individual person card
 }
 
+/*
+ * This is an Object for the "Main" section in SiteBuilder with properties of a HTML Semantic "main.
+ * This object is meant to be dynamically generated and is an early attempt at creating a pseudo
+ * child element for future exercises. This is created without using JavaScript
+ * frameworks. After all of the HTML elements have been created, further challenges will be added.
+ * Challenges will include porting this to a proper child class. Once a finalized parent class is created.
+ */
+
 function MainSection (siteSections, siteArticles, siteImages){
-	this.siteSections = siteSections;
-	this.siteArticles = siteArticles;
-	this.siteImages = siteImages;
+	this.siteSections = siteSections; //instantiate siteSections (Is this needed?)
+	this.siteArticles = siteArticles; //instantiate siteArticles (Is this needed?)
+	this.siteImages = siteImages; //instantiate siteImages (Is this needed?)
 	
 	function createSiteSections(){
+		//Create empty sections
 		var updateMain = document.getElementById('main-semantic');
 		var mainSections = '';
 
@@ -70,9 +83,9 @@ function MainSection (siteSections, siteArticles, siteImages){
 				mainSections += '<section id="' + secKey + '" class="styled-sections" >' +
 					'</section>\n';
 			}
-		}
+		}//Iterate through the siteSections
 		
-		return updateMain.innerHTML = mainSections;
+		return updateMain.innerHTML = mainSections; //is a return necessary?
 	}
 	
 	function getSectionArticles(){}
@@ -80,20 +93,26 @@ function MainSection (siteSections, siteArticles, siteImages){
 	
 	function fillSiteSections(section){
 	//Fill Section with Section header (h2) Article, and Image)
+		
 		for (sKey in section) {
 			if (section.hasOwnProperty(sKey)) {
 				let sectionID = sKey;
 				document.getElementById(sectionID).innerHTML = '<h2 id="section-title' + sKey + '">' + section[sKey] + '</h2>\n';
 			}
-		}
+		}//iterate through the sections and add inner HTML
 	}
 
-	createSiteSections();
-	fillSiteSections(siteSections);
+	createSiteSections(); //call the function to create the sections
+	fillSiteSections(siteSections); //call the function to fill the sections
 }
 
-
-function SiteBuilder(site, siteTitle, siteImages, siteHeader, siteMain, siteFooter) {
+/*
+ * This is an Object called SiteBuilder with properties of a web page.
+ * This object is meant to be dynamically built and an exercise on creating a site using JavaScript without
+ * frameworks. After all of the HTML elements have been created, further challenges will be added.
+  * Challenges will include augmenting a Virtual DOM to change content dynamically.
+ */
+function SiteBuilder(site, siteTitle, siteImages, siteHeader, siteMain, siteFooter) { //constructors for the new object
 	this.site = site;
 	this.siteTitle = setSiteTitle(siteTitle);
 	this.siteHeader = siteHeader;
@@ -113,10 +132,5 @@ function SiteBuilder(site, siteTitle, siteImages, siteHeader, siteMain, siteFoot
 	
 	var mainSection = new MainSection(siteSections, siteArticles, this.siteImages);
 	mainSection;
-	//console.log('Is Array: ' + Array.isArray(siteMain));
-	//findArray(siteHeader);
-	//console.log('Is Array: ' + Array.isArray(siteMain));
-	
-
 	
 }
