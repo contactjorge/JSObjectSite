@@ -5,9 +5,10 @@ Future iterations will expand on the building a more complex JavaScript Object a
 Note: All code in the main branch as well as the JSObjectToClass are my own.
 Note: Any and all contributions are for extending this learning exercize through challenges or by offering alternative considerations for features of JavaScript. 
 
-http://thejorgelopez.com
-Jorge Lopez
+You can view the live build here - https://contactjorge.github.io/JSObjectSite/
 
+Jorge Lopez
+http://thejorgelopez.com
 
 
 Resources used for this exercize came from the following online books, videos, and websites.
