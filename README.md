@@ -15,17 +15,19 @@ Resources used for this exercize came from the following online books, videos, a
 Lynda.com:
 <ul>
 <li> Programming Foundations: Fundamentals, released: 09/2011 | 4h 47m Simon Allardice
-* Web Development Foundations: Full-Stack vs Front-End, released: 06/2016 | 40m 1s Ray Villalobos
-* CSS Essential Training 1, released: 03/2017 | 2h 36m Christina Truong
-CSS Essential Training 2, released: 03/2017 | 2h 21m Christina Truong
-JavaScript Essential Training, released: 03/2017 | 5h 15m Morten Rand-Hendriksen
-HTML Essential Training, released: 09/2014 | 5h 54m James Williamson
-JavaScript and JSON: Integration Techniques, released: 11/2013 | 1h 12m Ray Villalobos
+<li> CSS Essential Training 1, released: 03/2017 | 2h 36m Christina Truong
+<li> CSS Essential Training 2, released: 03/2017 | 2h 21m Christina Truong
+<li> JavaScript Essential Training, released: 03/2017 | 5h 15m Morten Rand-Hendriksen
+<li> HTML Essential Training, released: 09/2014 | 5h 54m James Williamson
+<li> JavaScript and JSON: Integration Techniques, released: 11/2013 | 1h 12m Ray Villalobos
+</ul>
 
-Online References: 
+Online References:
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
-https://www.w3schools.com
+<ul>
+<li> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+<li> https://www.w3schools.com
+</ul>
 
 Blog Posts:
 
