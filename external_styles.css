@@ -2,37 +2,79 @@
 body {
 	font-family: sans-serif;
 	line-height: 1.7rem;
+	background: #EFEFEF;
+	padding: 0;
+	margin: 0;
 }
 
+.color1 {color: rgba(47, 52, 58, 1);}  /* #2F343A */
+.color2 {color: rgba(113, 125, 140,1);} /* #717D8C */
+.color3 {color: rgba(221, 221, 221, 1);} /* #DDDDDD */
+.color4 {color: rgba(189, 182, 156, 1);} /* #BDB69C */
+.color5 {color: rgba(128, 206, 185, 1);} /* #80CEB9 */
+.color6 {color: rgba(65, 170, 196, 1)} /* #41AAC4 */
+
+p {font-size: 0.75rem}
+h1 {font-size: 22px;}
+h2 {font-size: 21px;}
+h3 {font-size: 20px;}
+h4 {font-size: 18px;}
+h5 {font-size: 16px;}
+h6 {font-size: 14px;}
+
 /* Header and top navigation bar */
+#header-semantic {
+	padding: 0;
+}
 #top-navi{
-	background: cornflowerblue;
+	margin: 0 0 1rem 0;
+	background: rgba(113, 125, 140,1);;
 }
 .navi_links{
 	text-decoration: none;
-	background: cornflowerblue;
-	color: snow;
-	display: inline-flex;
+	background: rgba(113, 125, 140,1);;
+	color: rgba(221, 221, 221, 1);
+	display: inline-grid;
 	padding: 0.25rem 1rem;
 }
 .navi_links:hover{
-	background: snow;
-	color: cornflowerblue;
+	background: rgba(221, 221, 221, 1);
+	color: rgba(113, 125, 140,1);
+}
+
+header > h1{
+	margin: 2rem 1rem;
+}
+
+/* Main, Section, Articles Styling */
+main {
+	padding: 0 1.2rem;
+}
+
+section {
+	background: #D6DAD0;
+	color: #442E27;
+	display: block;
+	height: 18rem;
+	width: 58rem;
+	border: silver;
+	margin: 0 auto 2.75rem 4%;
+	box-shadow: 4px 4px 8px #717D8C, 3px 3px 10px #2F343A;
 }
 
 /* Footer and bottom navigation bar */
 footer{
-	background: lightgray;
-	color: snow;
+	background: rgba(47, 52, 58, 1);
+	color: rgba(65, 170, 195, 1.9);
 }
 #bottom-navi{
-	background: lightgray;
+	background: rgba(47, 52, 58, 1);
 	text-align: right;
 	left: 0;
 	right: 0;
 }
 #bottom-navi a {
-	color: darkslategray;
+	color: rgba(65, 170, 195, 1.9);
 	display: inline-flex;
 	padding: 0.25rem 1rem;
 }
@@ -40,18 +82,34 @@ footer{
 	text-decoration: none;
 }
 #bottom-navi a:hover {
-	background: darkslategrey;
-	color: lightgray;
+	background: rgba(65, 170, 195, 1.9);
+	color: rgba(47, 52, 58, 1);
 }
 
 /* Change layout for smaller screens. Tried to use handheld but did not work */
-@media screen and (min-width: 16rem) and (max-width: 32rem) {
+@media screen and (min-width: 16rem) and (max-width: 30rem) {
 	.navi_links {
 		text-align: center;
 		display: block;
 	}
+	
+	section {
+		text-align: center;
+		display: block;
+		height: 59rem;
+		width: 17rem;
+	}
+	
 	#bottom-navi a {
 		text-align: center;
 		display: block;
 	}
+}
+
+@media screen and (min-width: 24rem) and (max-width: 26rem) {
+	section {
+		height: 55rem;
+		width: 21rem;
+	}
+	
 }

@@ -61,15 +61,13 @@ function MainSection (siteSections, siteArticles, siteImages){
 	this.siteArticles = siteArticles;
 	this.siteImages = siteImages;
 	
-	function getSiteSections(){
-		
+	function createSiteSections(){
 		var updateMain = document.getElementById('main-semantic');
 		var mainSections = '';
 
 		for (secKey in siteSections) {
 			if (siteSections.hasOwnProperty(secKey)) {
 				mainSections += '<section id="' + secKey + '" class="styled-sections" >' +
-					'<h2>' + siteSections[secKey] + '</h2>\n' +
 					'</section>\n';
 			}
 		}
@@ -77,7 +75,18 @@ function MainSection (siteSections, siteArticles, siteImages){
 		return updateMain.innerHTML = mainSections;
 	}
 	
-	getSiteSections();
+	function getSectionArticles(){}
+	
+	
+	function fillSiteSections(section){
+		var siteSectionTitle = '';
+		var siteSectionContent = '';
+		//					'<h2>' + siteSections[secKey] + '</h2>\n' +
+		
+	}
+
+	createSiteSections();
+	fillSiteSections();
 }
 
 
