@@ -79,14 +79,17 @@ function MainSection (siteSections, siteArticles, siteImages){
 	
 	
 	function fillSiteSections(section){
-		var siteSectionTitle = '';
-		var siteSectionContent = '';
-		//					'<h2>' + siteSections[secKey] + '</h2>\n' +
-		
+	//Fill Section with Section header (h2) Article, and Image)
+		for (sKey in section) {
+			if (section.hasOwnProperty(sKey)) {
+				let sectionID = sKey;
+				document.getElementById(sectionID).innerHTML = '<h2 id="section-title' + sKey + '">' + section[sKey] + '</h2>\n';
+			}
+		}
 	}
 
 	createSiteSections();
-	fillSiteSections();
+	fillSiteSections(siteSections);
 }
 
 
