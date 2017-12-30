@@ -3,35 +3,46 @@
  * December 15th, 2017
  * Site Data Object for the site builder.
  *
- * Is this truly an object? Where do the methods begin
- * and which data points represent properties and constructors?
- * The goal of this learning example is to identify the questions and answers.
+ * Back to the drawing board. This creates a much simple set of data and objects by keeping
+ * things as simple as possible. Instead of multiple layers, I am creating multiple objects.
  *
- * This will be achieved through an analysis of the Object Oriented design features of JavaScript
+ * The goal of this learning example is to identify these objects and create and Object prototype
+ * achieved through an analysis of the Object Oriented design features of JavaScript
  * such as object prototypes, classes, and inheritance.
  *
- * A goal for me personally is to explore the singleton deign pattern. Anyone care to explain it?
- * (edited December 23, 2017)
+ * (edited December 30th, 2017)
  */
 var siteData = {
-	Site_Title: "JavaScript in a data driven world: Arrays, Objects, and JSON", //Method to change the site name
+	Site_Title: "JavaScript in a data driven world: Arrays, Objects, and JSON",
+
+};  //Method to change the site name
+var siteImages = {
 	Site_Images: {// Site Image properties for image elements.
-		"image00": "image01.png",
-		"image01": "image02.png",
-		"image02": "image03.png",
-		"image03": "image04.png",
-		"image04": "image05.png"
-	},//End Images Data
+		image00: "image01.png",
+		image01: "image02.png",
+		image02: "image03.png",
+		image03: "image04.png",
+		image04: "image05.png"
+	}
+}; //End Images Data
+
+var topNav = {
+	Logo: "logo.png", //Logo property for the Header or NavBar
+	NavBar: { //NavBar property for the header.
+		About: "http://thejorgelopez.com",
+		Portfolio: "http://thejorgelopez.com",
+		Blog: "http://thejorgelopez.com",
+		Resume: "http://thejorgelopez.com"
+	}
+}; //end Top Navigation
+
+var headerElement = {
 	Header_Semantic: { //Method for all header properties
-		Owner : "TheJorgeLopez Learning", //Header property for the header title
-		Logo: "logo.png", //Logo property for the Header or NavBar
-		NavBar: { //NavBar property for the header.
-			About : "http://thejorgelopez.com",
-			Portfolio : "http://thejorgelopez.com",
-			Blog : "http://thejorgelopez.com",
-			Resume : "http://thejorgelopez.com"
-		}
-	},//End Header Section
+		Owner: "TheJorgeLopez Learning" //Header property for the header title
+	}
+}; //End Header Section
+
+var mainElement = {
 	Main_Semantic : { //Main Section Semantic Data.
 		Sections: {
 			Section0: "JavaScript in a Data Driven World",
@@ -56,93 +67,82 @@ var siteData = {
 			Article7 : "\"Tódæg we ârunghûslgang ongietan to JavaScript þings. Tôhwon sy dôð forma capitula ac l¯ærednes. Man sy gewrit ætstandan gamolferhð englisc nymðe geþéodan.\"",
 			Article8 : "",
 			Article9 : ""//Challenge: Check for null article content
-		},
-		People: [
-			{  //People card Method. Has Object with key : field pairs. Why would this method have [] around them? (part of the challenge)
-				"fName": "Jorge",
-				"lName": "Lopez",
-				"Movies": [
-					{
-						"Yitle": "Star Wars",
-						"Year": "1977"
-					},
-					{
-						"Title": "Wizard of Oz",
-						"Year": "1939"
-					},
-					{
-						"Title": "BeetleJuice",
-						"Year": "1988"
-					},
-					{
-						"Title": "E.T.",
-						"Year": "1982"
-					}]
-			},//End Person card 1. Challenge: Sort movies by year{
-			{
-				"fName": "John",
-				"lName": "Smith",
-				"Movies": [
-				{
-					"Title": "It's a Wonderful Life",
-					"Year": "1946"
-				},
-				{
-					"Title": "Justice League",
-					"Year": "2017"
-				},
-				{
-					"Title": "Muppets Take Manhattan",
-					"Year": "1984"
-				},
-				{
-					"Title": "Grease",
-					"Year": "1978"
-				}]
-			},//End Person card 2. Challenge: Sort movies by year
-			{
-				"fName": "Sarah-Jane",
-				"lName": "Smith",
-				"Movies": [
-					{
-					"Title": "Batman",
-					"Year": "1980"
-					},
-					{
-					"Title": "Star Wars: Force Awakens",
-					"Year": "2015"
-					},
-					{
-					"Title": "Star Trek",
-					"Year": "1979"
-					},
-					{
-					"Title": "Gone With the Wind",
-					"Year": "1939"
-				}]
+		}
+	}
+};
+
+var people = {
+	Person: [{  //People card Method. Has Object with key : field pairs. Why would this method have [] around them? (part of the challenge)
+		fName: "Jorge",
+		lName: "Lopez",
+		Movies: [{
+			"Yitle": "Star Wars",
+			"Year": "1977"
+		}, {
+			"Title": "Wizard of Oz",
+			"Year": "1939"
+		}, {
+			"Title": "BeetleJuice",
+			"Year": "1988"
+		}, {
+			"Title": "E.T.",
+			"Year": "1982"
+		}]
+	},//End Person card 1. Challenge: Sort movies by year
+		{
+			fName: "John",
+			lName: "Smith",
+			Movies: [{
+				"Title": "It's a Wonderful Life",
+				"Year": "1946"
+			}, {
+				"Title": "Justice League",
+				"Year": "2017"
+			}, {
+				"Title": "Muppets Take Manhattan",
+				"Year": "1984"
+			}, {
+				"Title": "Grease",
+				"Year": "1978"
+			}]
+		},//End Person card 2. Challenge: Sort movies by year
+		{
+			fName: "Sarah-Jane",
+			lName: "Smith",
+			Movies: [{
+				"Title": "Batman",
+				"Year": "1980"
+			}, {
+				"Title": "Star Wars: Force Awakens",
+				"Year": "2015"
+			}, {
+				"Title": "Star Trek",
+				"Year": "1979"
+			}, {
+				"Title": "Gone With the Wind",
+				"Year": "1939"
+			}]
 		},//End Person card 3. Challenge: Sort movies by year
-			{
-			"fName": "Neil DeGrasse",
-			"lName": "Tyson",
-			"Movies": [
-				{
-					"Title": "Batman vs Superman",
-					"Year": "2015"
-				},
-				{
-					"Title": "Contact",
-					"Year": "1997"
-				},
-				{
-					"Title": "Paper Moon",
-					"Year": "1973"
-				},
-				{
-					"Title": "Young Frankenstein",
-					"Year": "1974"
-				}]//End Person card 4. Challenge: Sort movies by year
-			}]//End Person Content Challenge: Sort by Last Name
-	},//End Main Section Data
+		{
+			fName: "Neil DeGrasse",
+			lName: "Tyson",
+			Movies: [{
+				"Title": "Batman vs Superman",
+				"Year": "2015"
+			}, {
+				"Title": "Contact",
+				"Year": "1997"
+			}, {
+				"Title": "Paper Moon",
+				"Year": "1973"
+			}, {
+				"Title": "Young Frankenstein",
+				"Year": "1974"
+			}]//End Person card 4. Challenge: Sort movies by year
+		}]//End Person Content Challenge: Sort by Last Name
+};//End Main Section Data
+
+var footerElements = {
 	Footer_Semantic: {//Footer method for the header.
 		Social_Media : {//Social Media property for the footer? Can you think of another use?
 			blog : "http://sithguidetogalaxy.com",
@@ -150,6 +150,13 @@ var siteData = {
 			youtube : "https://www.youtube.com/user/BinauralBrainwave",
 			instagram : "https://www.instagram.com/downtownevanston/",
 			twitter : "https://twitter.com/repkellycassidy"
-		}//End Social Media Links for navigation
+		},//End Social Media Links for navigation
+		Media_Icons: {
+			blog: "",
+			facebook: "",
+			youtube: "",
+			instagram: "",
+			twitter: ""
+		}
 	}//build the Footer Section Data
 };//End Site Data Object
