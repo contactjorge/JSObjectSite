@@ -13,7 +13,7 @@
  * A goal for me personally is to explore the singleton deign pattern. Anyone care to explain it?
  * (edited December 23, 2017)
  */
-var siteData = {
+let siteData = {
 	Site_Title: "JavaScript in a data driven world: Arrays, Objects, and JSON", //Method to change the site name
 	Site_Images: {// Site Image properties for image elements.
 		"image00": "image01.png",
