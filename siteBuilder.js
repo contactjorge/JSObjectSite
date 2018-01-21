@@ -78,9 +78,9 @@ function MainSection (siteSections, siteArticles, siteImages) {
 		var updateMain = document.getElementById('main-semantic');
 		var mainSections = '';
 
-		for (secKey in siteSections) {
-			if (siteSections.hasOwnProperty(secKey)) {
-				mainSections += '<section id="' + secKey + '" class="styled-sections" >' +
+		for (sectionKey in siteSections) {
+			if (siteSections.hasOwnProperty(sectionKey)) {
+				mainSections += '<section id="' + sectionKey + '" class="styled-sections" >' +
 					'</section>\n';
 			}
 		}//Iterate through the siteSections
