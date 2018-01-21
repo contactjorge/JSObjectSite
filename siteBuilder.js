@@ -12,13 +12,13 @@
  * (Edited December 23, 2017
  */
 
-function setSiteTitle(siteTitle){
+function setSiteTitle(siteTitle) {
 	//add a site title dynamically.
 	this.siteTitle = siteTitle; //set this functions siteTitle variable to the constructor siteTitle
 	document.title = this.siteTitle; //assign the object property "Title" to document.title
 }
 
-function getSiteOwner(owner){
+function getSiteOwner(owner) {
 	//create and place the site's owner as the title for the header semantic.
 	var headerTitle = document.createElement("h1"); //create the h1 element in the header-semantic element
 	var titleText = document.createTextNode(owner); //create the h1 text node in the h1 in the header-semantic element
@@ -56,7 +56,7 @@ function getSiteFooter(footers) {
 }//end getFooter() navbar builder
 
 
-function getSitePeople(){
+function getSitePeople() {
 	//Stub for creating individual person card
 }
 
@@ -68,7 +68,7 @@ function getSitePeople(){
  * Challenges will include porting this to a proper child class. Once a finalized parent class is created.
  */
 
-function MainSection (siteSections, siteArticles, siteImages){
+function MainSection (siteSections, siteArticles, siteImages) {
 	this.siteSections = siteSections; //instantiate siteSections (Is this needed?)
 	this.siteArticles = siteArticles; //instantiate siteArticles (Is this needed?)
 	this.siteImages = siteImages; //instantiate siteImages (Is this needed?)
@@ -88,10 +88,10 @@ function MainSection (siteSections, siteArticles, siteImages){
 		return updateMain.innerHTML = mainSections; //is a return necessary?
 	}
 	
-	function getSectionArticles(){}
+	function getSectionArticles() {}
 	
 	
-	function fillSiteSections(section){
+	function fillSiteSections(section) {
 	//Fill Section with Section header (h2) Article, and Image)
 		
 		for (sKey in section) {
