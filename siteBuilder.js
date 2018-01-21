@@ -9,7 +9,7 @@
  *
  * If the data is truly an object then do I need getters and setters? Which ones are necessary
  * and which ones are not? Are the mutators methods already implied in the object itself?
- * (Edited December 23, 2017
+ * (Edited January 21, 2018
  */
 
 function setSiteTitle(siteTitle) {

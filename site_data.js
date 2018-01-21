@@ -11,7 +11,7 @@
  * such as object prototypes, classes, and inheritance.
  *
  * A goal for me personally is to explore the singleton deign pattern. Anyone care to explain it?
- * (edited December 23, 2017)
+ * (edited January 21, 2018)
  */
 let siteData = {
 	Site_Title: "JavaScript in a data driven world: Arrays, Objects, and JSON", //Method to change the site name

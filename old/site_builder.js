@@ -6,7 +6,7 @@
  *
  * If the data is truly an object then do I need the classes, constructors, and methods?
  * Can the singleton deign pattern be applied and should it?
- * (edited December 23, 2017)
+ * (edited January 21, 2018)
  */
 
 class SiteBuilder {
